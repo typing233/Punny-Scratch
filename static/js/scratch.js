@@ -27,6 +27,8 @@ class ScratchCard {
     }
 
     drawScratchLayer() {
+        this.ctx.globalCompositeOperation = 'source-over';
+        
         const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
         gradient.addColorStop(0, '#c0c0c0');
         gradient.addColorStop(0.5, '#a0a0a0');
@@ -34,8 +36,6 @@ class ScratchCard {
         
         this.ctx.fillStyle = gradient;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        
-        this.ctx.globalCompositeOperation = 'source-over';
         
         this.ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
         this.ctx.font = 'bold 20px Arial';
