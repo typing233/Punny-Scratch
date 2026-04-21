@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谐音梗刮刮乐</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎊 谐音梗刮刮乐 🎊</h1>
+            <p class="subtitle">刮开涂层，解锁搞笑谐音梗！</p>
+        </header>
+
+        <div class="game-area">
+            <div class="question-area">
+                <div class="question-label">谜面：</div>
+                <div class="question-text" id="questionText">马年最适合去哪旅游？</div>
+            </div>
+
+            <div class="scratch-card-container">
+                <div class="scratch-card" id="scratchCard">
+                    <div class="answer-layer" id="answerLayer">
+                        <span class="answer-text" id="answerText">马尔代夫（马上出发）</span>
+                    </div>
+                    <canvas class="scratch-layer" id="scratchCanvas"></canvas>
+                </div>
+                <div class="scratch-hint">👆 用鼠标或手指刮开涂层</div>
+            </div>
+
+            <div class="progress-area">
+                <div class="progress-label">刮开进度：</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-percent" id="progressPercent">0%</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-next" id="nextBtn" disabled>下一张</button>
+                <button class="btn btn-reset" id="resetBtn">重新刮开</button>
+            </div>
+        </div>
+
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <div class="modal-icon">🎉</div>
+                <h2 class="modal-title">恭喜你！</h2>
+                <p class="modal-text">你猜对了吗？</p>
+                <button class="btn btn-confirm" id="confirmBtn">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scratch.js') }}"></script>
+</body>
+</html>
