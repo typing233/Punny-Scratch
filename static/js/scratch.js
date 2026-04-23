@@ -20,7 +20,6 @@ class ScratchCard {
     }
 
     init() {
-        this.setupCanvas();
         this.bindEvents();
         this.initAudio();
         this.loadCategories();
@@ -90,6 +89,11 @@ class ScratchCard {
     }
 
     drawScratchLayer() {
+        if (this.canvas.width === 0 || this.canvas.height === 0) {
+            console.warn('Canvas dimensions are zero, cannot draw scratch layer');
+            return;
+        }
+        
         this.ctx.globalCompositeOperation = 'source-over';
         
         const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
@@ -179,7 +183,11 @@ class ScratchCard {
         this.currentCategory = category;
         document.getElementById('themeHall').style.display = 'none';
         document.getElementById('gameArea').style.display = 'block';
-        this.loadRiddle();
+        
+        setTimeout(() => {
+            this.setupCanvas();
+            this.loadRiddle();
+        }, 100);
     }
 
     backToTheme() {
@@ -353,6 +361,7 @@ class ScratchCard {
         requestAnimationFrame(() => this.animate());
         
         if (this.particles.length === 0) return;
+        if (this.canvas.width === 0 || this.canvas.height === 0) return;
         
         // 绘制粒子
         this.ctx.save();
@@ -432,6 +441,11 @@ class ScratchCard {
 
     checkProgress() {
         if (this.isCompleted) return;
+        
+        if (this.canvas.width === 0 || this.canvas.height === 0) {
+            console.warn('Canvas dimensions are zero, cannot check progress');
+            return;
+        }
         
         const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
         const pixels = imageData.data;
@@ -537,6 +551,11 @@ class ScratchCard {
     reset() {
         this.isCompleted = false;
         this.userGuess = '';
+        
+        if (this.canvas.width === 0 || this.canvas.height === 0) {
+            this.setupCanvas();
+        }
+        
         this.drawScratchLayer();
         this.updateProgressBar(0);
         document.getElementById('nextBtn').disabled = true;
