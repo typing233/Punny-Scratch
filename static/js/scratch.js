@@ -362,15 +362,27 @@ class ScratchCard {
         
         if (this.particles.length === 0) return;
         if (this.canvas.width === 0 || this.canvas.height === 0) return;
+        if (this.isCompleted) return;
         
         // 绘制粒子
         this.ctx.save();
-        this.ctx.globalCompositeOperation = 'lighter';
+        this.ctx.globalCompositeOperation = 'source-over';
         
         for (let i = this.particles.length - 1; i >= 0; i--) {
             const p = this.particles[i];
             
-            this.ctx.fillStyle = p.color;
+            // 减小粒子的透明度，避免遮挡
+            const rgbaMatch = p.color.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/);
+            if (rgbaMatch) {
+                const r = parseInt(rgbaMatch[1]);
+                const g = parseInt(rgbaMatch[2]);
+                const b = parseInt(rgbaMatch[3]);
+                const a = parseFloat(rgbaMatch[4]) * p.life;
+                this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+            } else {
+                this.ctx.fillStyle = p.color;
+            }
+            
             this.ctx.beginPath();
             this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             this.ctx.fill();
@@ -479,6 +491,10 @@ class ScratchCard {
         if (this.isCompleted) return;
         
         this.isCompleted = true;
+        
+        // 清空粒子数组，避免绘制残留
+        this.particles = [];
+        
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.updateProgressBar(1);
         
