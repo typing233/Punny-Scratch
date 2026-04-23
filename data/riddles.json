@@ -3,90 +3,105 @@
     "id": 1,
     "question": "马年最适合去哪旅游？",
     "answer": "马尔代夫（马上出发）",
-    "hint": "与马有关的谐音"
+    "hint": "与马有关的谐音",
+    "category": "马年特辑"
   },
   {
     "id": 2,
-    "question": "什么动物最容易被贴在墙上？",
-    "answer": "海豹（海报）",
-    "hint": "谐音梗"
+    "question": "马路上最忙的动物是什么？",
+    "answer": "斑马（斑马线）",
+    "hint": "与交通有关",
+    "category": "马年特辑"
   },
   {
     "id": 3,
-    "question": "什么水果最怕热？",
-    "answer": "芒果（忙过）",
-    "hint": "与忙有关"
+    "question": "马最喜欢的零食是什么？",
+    "answer": "马铃薯（马零薯）",
+    "hint": "与食物有关",
+    "category": "马年特辑"
   },
   {
     "id": 4,
-    "question": "什么动物最怕水？",
-    "answer": "鸡（机）不可失（湿）",
-    "hint": "成语谐音"
+    "question": "打工人最讨厌的菜是什么？",
+    "answer": "炒鱿鱼",
+    "hint": "与工作有关",
+    "category": "打工人日常"
   },
   {
     "id": 5,
-    "question": "什么植物最老实？",
-    "answer": "芭蕉（老实巴交）",
-    "hint": "与老实有关"
+    "question": "打工人最爱的饮料是什么？",
+    "answer": "咖啡（加班必备）",
+    "hint": "提神醒脑",
+    "category": "打工人日常"
   },
   {
     "id": 6,
-    "question": "什么门永远关不上？",
-    "answer": "球门",
-    "hint": "与运动有关"
+    "question": "为什么打工人喜欢买彩票？",
+    "answer": "想逆袭（洗鞋）",
+    "hint": "谐音梗",
+    "category": "打工人日常"
   },
   {
     "id": 7,
-    "question": "什么东西越洗越脏？",
-    "answer": "水",
-    "hint": "想想洗东西用什么"
+    "question": "什么动物最会讲冷笑话？",
+    "answer": "企鹅（冷到发抖）",
+    "hint": "与寒冷有关",
+    "category": "地狱笑话"
   },
   {
     "id": 8,
-    "question": "什么路最窄？",
-    "answer": "冤家路窄",
-    "hint": "成语"
+    "question": "为什么程序员喜欢喝咖啡？",
+    "answer": "因为代码需要调试（吊事）",
+    "hint": "与编程有关",
+    "category": "地狱笑话"
   },
   {
     "id": 9,
-    "question": "什么东西有头无脚？",
-    "answer": "蒜（算）头",
-    "hint": "与计算有关"
+    "question": "什么东西越擦越脏？",
+    "answer": "黑板",
+    "hint": "学校常见",
+    "category": "地狱笑话"
   },
   {
     "id": 10,
-    "question": "什么动物最容易摔倒？",
-    "answer": "狐狸（因为狡猾/脚滑）",
-    "hint": "谐音梗"
+    "question": "什么水果最有爱心？",
+    "answer": "桃子（心型）",
+    "hint": "形状有关",
+    "category": "趣味生活"
   },
   {
     "id": 11,
-    "question": "什么书不能看？",
-    "answer": "秘书",
-    "hint": "与人有关"
+    "question": "什么动物最会做生意？",
+    "answer": "狐狸（狡猾）",
+    "hint": "与聪明有关",
+    "category": "趣味生活"
   },
   {
     "id": 12,
-    "question": "什么球不能踢？",
-    "answer": "地球",
-    "hint": "我们住的地方"
+    "question": "什么花最没有力气？",
+    "answer": "茉莉花（没力花）",
+    "hint": "谐音梗",
+    "category": "趣味生活"
   },
   {
     "id": 13,
-    "question": "什么马不能骑？",
-    "answer": "海马/罗马",
-    "hint": "两种答案"
+    "question": "为什么鱼不会说话？",
+    "answer": "因为它在水里（睡里）",
+    "hint": "谐音梗",
+    "category": "动物世界"
   },
   {
     "id": 14,
-    "question": "什么水永远用不完？",
-    "answer": "口水/泪水",
-    "hint": "身体产生的"
+    "question": "什么动物最会模仿人？",
+    "answer": "鹦鹉",
+    "hint": "学舌",
+    "category": "动物世界"
   },
   {
     "id": 15,
-    "question": "什么东西越热越爱出来？",
-    "answer": "汗",
-    "hint": "夏天常见"
+    "question": "什么动物最守时？",
+    "answer": "公鸡（打鸣）",
+    "hint": "报时",
+    "category": "动物世界"
   }
 ]

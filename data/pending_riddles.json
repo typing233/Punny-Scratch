@@ -1,0 +1,10 @@
+[
+  {
+    "question": "测试谜面",
+    "answer": "测试答案",
+    "hint": "测试提示",
+    "category": "趣味生活",
+    "id": 1,
+    "status": "pending"
+  }
+]
