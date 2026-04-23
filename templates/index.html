@@ -13,10 +13,25 @@
             <p class="subtitle">刮开涂层，解锁搞笑谐音梗！</p>
         </header>
 
-        <div class="game-area">
+        <!-- 主题选择大厅 -->
+        <div class="theme-hall" id="themeHall">
+            <h2>🎯 选择主题</h2>
+            <div class="theme-grid" id="themeGrid">
+                <!-- 主题卡片将通过JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <!-- 游戏区域 -->
+        <div class="game-area" id="gameArea" style="display: none;">
             <div class="question-area">
                 <div class="question-label">谜面：</div>
                 <div class="question-text" id="questionText">马年最适合去哪旅游？</div>
+            </div>
+
+            <div class="guess-area">
+                <div class="guess-label">🤔 先猜一猜：</div>
+                <input type="text" class="guess-input" id="guessInput" placeholder="输入你的答案...">
+                <p class="guess-hint">刮开后会与答案对比哦！</p>
             </div>
 
             <div class="scratch-card-container">
@@ -40,6 +55,8 @@
             <div class="controls">
                 <button class="btn btn-next" id="nextBtn" disabled>下一张</button>
                 <button class="btn btn-reset" id="resetBtn">重新刮开</button>
+                <button class="btn btn-theme" id="backToTheme">更换主题</button>
+                <button class="btn btn-submit" id="submitBtn">提交谐音梗</button>
             </div>
         </div>
 
@@ -48,7 +65,57 @@
                 <div class="modal-icon">🎉</div>
                 <h2 class="modal-title">恭喜你！</h2>
                 <p class="modal-text">你猜对了吗？</p>
-                <button class="btn btn-confirm" id="confirmBtn">确认</button>
+                <div class="modal-actions">
+                    <button class="btn btn-confirm" id="confirmBtn">确认</button>
+                    <button class="btn btn-share" id="shareBtn">分享海报</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="shareModal">
+            <div class="modal-content">
+                <h2 class="modal-title">分享海报</h2>
+                <div class="poster-container" id="posterContainer">
+                    <!-- 海报将在这里生成 -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-download" id="downloadBtn">下载海报</button>
+                    <button class="btn btn-close" id="closeShareBtn">关闭</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="submitModal">
+            <div class="modal-content">
+                <h2 class="modal-title">提交谐音梗</h2>
+                <form class="submit-form" id="submitForm">
+                    <div class="form-group">
+                        <label for="submitQuestion">谜面：</label>
+                        <input type="text" id="submitQuestion" placeholder="输入谜面..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="submitAnswer">答案：</label>
+                        <input type="text" id="submitAnswer" placeholder="输入答案..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="submitHint">提示：</label>
+                        <input type="text" id="submitHint" placeholder="输入提示...">
+                    </div>
+                    <div class="form-group">
+                        <label for="submitCategory">分类：</label>
+                        <select id="submitCategory" required>
+                            <option value="马年特辑">马年特辑</option>
+                            <option value="打工人日常">打工人日常</option>
+                            <option value="地狱笑话">地狱笑话</option>
+                            <option value="趣味生活">趣味生活</option>
+                            <option value="动物世界">动物世界</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-confirm">提交</button>
+                        <button type="button" class="btn btn-close" id="closeSubmitBtn">关闭</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
